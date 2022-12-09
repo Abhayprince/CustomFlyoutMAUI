@@ -4,11 +4,217 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CustomFlyoutMAUI"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:controls="clr-namespace:CustomFlyoutMAUI.Controls"
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutIcon="dotnet_bot.png">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!--<Shell.ItemTemplate>
+        <DataTemplate>
+            <HorizontalStackLayout Spacing="20" Padding="25">
+                <Label Text="{Binding Title}"
+                   FontSize="20"
+                   TextColor="Green"
+                   FontAttributes="Bold"/>
+                <Image Source="{Binding FlyoutIcon}"
+                   Aspect="AspectFill"
+                   HeightRequest="20"
+                   WidthRequest="20"
+                   HorizontalOptions="End"/>
+            </HorizontalStackLayout>
+        </DataTemplate>
+    </Shell.ItemTemplate>-->
 
+    <Shell.FlyoutHeader>
+        <Border BackgroundColor="#ddd"
+                StrokeThickness="0">
+            <Grid ColumnDefinitions="Auto, *"
+                    Padding="25"
+                  ColumnSpacing="20">
+                <Image Grid.Column="0"
+                Source="dotnet_bot.png"
+                   Aspect="AspectFill"
+                   HeightRequest="50"
+                   WidthRequest="50"/>
+
+                <Label Grid.Column="1"
+                   Text="Abhay Prince"
+                   VerticalTextAlignment="Center"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#333333"/>
+            </Grid>
+        </Border>
+    </Shell.FlyoutHeader>
+    
+    <!--<Shell.FlyoutContent>
+        <ScrollView Margin="0" Padding="0" VerticalOptions="Start">
+            <VerticalStackLayout VerticalOptions="Start">
+                <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                    <Image Grid.Column="0" 
+                           Source="dotnet_bot"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                    <Label Grid.Column="1" 
+                           Text="Menu item 1"
+                           FontSize="16"
+                           />
+
+                    <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Grid.GestureRecognizers>
+                    
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                    <Image Grid.Column="0" 
+                           Source="dotnet_bot"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                    <Label Grid.Column="1" 
+                           Text="Menu item 2"
+                           FontSize="16"
+                           />
+
+                    <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                    <Image Grid.Column="0" 
+                           Source="dotnet_bot"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                    <Label Grid.Column="1" 
+                           Text="Menu item 3"
+                           FontSize="16"
+                           />
+
+                    <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                    <Image Grid.Column="0" 
+                           Source="dotnet_bot"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                    <Label Grid.Column="1" 
+                           Text="Menu item 4"
+                           FontSize="16"
+                           />
+
+                    <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                    <Image Grid.Column="0" 
+                           Source="dotnet_bot"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                    <Label Grid.Column="1" 
+                           Text="Menu item 5"
+                           FontSize="16"
+                           />
+
+                    <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                    <Image Grid.Column="0" 
+                           Source="dotnet_bot"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                    <Label Grid.Column="1" 
+                           Text="Menu item 6"
+                           FontSize="16"
+                           />
+
+                    <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Shell.FlyoutContent>-->
+
+    <Shell.FlyoutContent>
+        <controls:CustomFlyoutContent />
+    </Shell.FlyoutContent>
+    
+    <Shell.FlyoutFooter>
+        <Label Text="Copyright | Abhay Prince"
+               BackgroundColor="AliceBlue"
+               HorizontalTextAlignment="Center"
+               Padding="0, 10"/>        
+    </Shell.FlyoutFooter>
+    
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Route="ParentRoute">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    
+        <ShellContent
+            Title="Menu 2"
+            Icon="dotnet_bot.png"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage1" />
+    
+        <ShellContent
+            Icon="dotnet_bot.png"
+            Title="Menu 3"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage2" />
+
+        <ShellContent
+            Title="Menu 4"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage3" />
+    </FlyoutItem>
 </Shell>

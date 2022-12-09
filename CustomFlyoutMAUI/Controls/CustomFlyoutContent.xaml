@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CustomFlyoutMAUI.Controls.CustomFlyoutContent">
+
+    <ScrollView Margin="0" Padding="0" VerticalOptions="Start">
+        <VerticalStackLayout VerticalOptions="Start">
+            <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                <Image Grid.Column="0" 
+                           Source="dotnet_bot.png"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                <Label Grid.Column="1" 
+                           Text="Menu item 1"
+                           FontSize="16"
+                           />
+
+                <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Grid.GestureRecognizers>
+
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                <Image Grid.Column="0" 
+                           Source="dotnet_bot.png"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                <Label Grid.Column="1" 
+                           Text="Menu item 2"
+                           FontSize="16"
+                           />
+
+                <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                <Image Grid.Column="0" 
+                           Source="dotnet_bot"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                <Label Grid.Column="1" 
+                           Text="Menu item 3"
+                           FontSize="16"
+                           />
+
+                <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                <Image Grid.Column="0" 
+                           Source="dotnet_bot"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                <Label Grid.Column="1" 
+                           Text="Menu item 4"
+                           FontSize="16"
+                           />
+
+                <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                <Image Grid.Column="0" 
+                           Source="dotnet_bot.svg"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                <Label Grid.Column="1" 
+                           Text="Menu item 5"
+                           FontSize="16"
+                           />
+
+                <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto, *, Auto"
+                      Padding="10"
+                      ColumnSpacing="10">
+                <Image Grid.Column="0" 
+                           Source="dotnet_bot.svg"
+                           Aspect="AspectFill"
+                           HeightRequest="25"
+                           WidthRequest="25"/>
+
+                <Label Grid.Column="1" 
+                           Text="Menu item 6"
+                           FontSize="16"
+                           />
+
+                <Label Grid.Column="2"
+                           Text=">"
+                           FontAttributes="Bold"
+                           Scale="1.5"
+                           />
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentView>
